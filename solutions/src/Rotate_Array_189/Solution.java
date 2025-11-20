@@ -11,36 +11,20 @@ public class Solution {
         int right = nums.length - 1;
         k = k % n;
 
-        while(left < right) {
-            int aux = nums[left];
-            nums[left] = nums[right];
-            nums[right] = aux;
-
-            left++;
-            right--;
-        }
-
-        left = 0;
-        right = k - 1;
-        while(left < right) {
-            int aux = nums[left];
-            nums[left] = nums[right];
-            nums[right] = aux;
-
-            left++;
-            right--;
-        }
-
-        left = k;
-        right = n - 1;
-        while(left < right) {
-            int aux = nums[left];
-            nums[left] = nums[right];
-            nums[right] = aux;
-
-            left++;
-            right--;
-        }
-
+        reverse(nums, left, right);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, n - 1);
     }
+
+    private void reverse(int[] nums, int left, int right) {
+        while(left < right) {
+            int aux = nums[left];
+            nums[left] = nums[right];
+            nums[right] = aux;
+
+            left++;
+            right--;
+        }
+    }
+
 }
