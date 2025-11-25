@@ -1,5 +1,11 @@
 package Gas_Station_134;
 
+/// compute the total gas and total cost (sum of the elements of the given arrays)
+/// if the total cost is bigger than the total gas => return -1
+/// compute the difference between the gas and cost at the same index
+/// if it is negative the car can t travel around the circuit
+/// reset the total to 0 and increase the index
+
 class Solution {
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int len = gas.length;
